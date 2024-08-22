@@ -8,6 +8,7 @@ namespace ProductsApi.Data.Repositories
         Task DeleteProductAsync(int id);
         Task<Product> GetProductAsync(int id);
         Task<IEnumerable<Product>> GetProductsAsync();
+        Task<IQueryable<Product>> GetProductsAsync(int? categoryId);
         Task<bool> ProductExistsAsync(int id);
         Task<Product> UpdateProductAsync(Product product);
     }

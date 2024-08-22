@@ -17,6 +17,13 @@ namespace ProductsApi.Service
             return await _productRepository.GetProductsAsync();
         }
 
+        public async Task<IEnumerable<Product>> GetProductsAsync(int? categoryId)
+        {
+            var products = await _productRepository.GetProductsAsync(categoryId);
+
+            return products;
+        }
+
         public async Task<Product> GetProductAsync(int id)
         {
             return await _productRepository.GetProductAsync(id);

@@ -8,6 +8,7 @@ namespace ProductsApi.Service
         Task DeleteProductAsync(int id);
         Task<Product> GetProductAsync(int id);
         Task<IEnumerable<Product>> GetProductsAsync();
+        Task<IEnumerable<Product>> GetProductsAsync(int? categoryId);
         Task<Product> UpdateProductAsync(Product product);
         Task<bool> ProductExistsAsync(int id);
     }

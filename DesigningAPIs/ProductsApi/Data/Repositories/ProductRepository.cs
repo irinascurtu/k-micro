@@ -31,7 +31,8 @@ namespace ProductsApi.Data.Repositories
 
         public async Task<Product> UpdateProductAsync(Product product)
         {
-            _context.Entry(product).State = EntityState.Modified;
+            // _context.Entry(product).State = EntityState.Modified;
+            _context.Products.Update(product);
             await _context.SaveChangesAsync();
             return product;
         }
@@ -49,6 +50,11 @@ namespace ProductsApi.Data.Repositories
         public async Task<bool> ProductExistsAsync(int id)
         {
             return await _context.Products.AnyAsync(e => e.Id == id);
+        }
+
+        public async Task<IQueryable<Product>> GetProductsAsync(int? categoryId)
+        {
+            return  _context.Products.Where(p => p.CategoryId == categoryId);
         }
     }
 }
