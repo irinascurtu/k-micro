@@ -19,6 +19,14 @@ namespace ProductsApi.Controllers
             _productService = productService;
         }
 
-      
+
+        [HttpGet]
+        public async Task<IActionResult> GetProducts()
+        {
+            var products = await _productService.GetProductsAsync();
+            return Ok(products);
+            // TODO: add mappings and use the Model if needed
+        }
+
     }
 }
