@@ -1,4 +1,6 @@
-﻿namespace OrdersApi.Models
+﻿using OrdersApi.Data.Domain;
+
+namespace OrdersApi.Models
 {
     public class OrderModel
     {
