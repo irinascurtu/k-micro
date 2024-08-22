@@ -20,7 +20,10 @@ namespace ProductsApi.Service
         public async Task<IEnumerable<Product>> GetProductsAsync(int? categoryId)
         {
             var products = await _productRepository.GetProductsAsync(categoryId);
+            //   products = products.Where(x => x.Name.StartsWith("S"));
+            //   products = products.Where(x => x.Price > 10);
 
+          //  var items = products.ToList();
             return products;
         }
 
