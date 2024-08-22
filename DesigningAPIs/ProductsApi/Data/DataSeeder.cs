@@ -1,34 +1,64 @@
-﻿using ProductsApi.Data.Entities;
-using System.Text.Json;
+﻿using Newtonsoft.Json;
+using ProductsApi.Data.Entities;
 
 namespace ProductsApi.Data
 {
     public static class DataSeeder
     {
-
         public static void SeedData(ProductContext _context)
         {
-            //if (!_context.Speakers.Any())
-            //{
-            //    _context.Speakers.AddRange(LoadSpeakers());
-            //    _context.SaveChanges();
-            //}
+            if (!_context.Products.Any())
+            {
+                _context.Products.AddRange(LoadProducts());
+                _context.SaveChanges();
+            }
+            if (!_context.Categories.Any())
+            {
+                _context.Categories.AddRange(LoadCategories());
+                _context.SaveChanges();
+            }
         }
 
-        //private static List<Product> LoadSpeakers()
-        //{
-        //    var jsonPath = @"D:\learning\MyGit\conference-main\backend\src\Conference.Api\Conference.Domain\data.json";
-        //    using (StreamReader file = File.OpenText(jsonPath))
-        //    {
+        private static List<Product> LoadProducts()
+        {
+            var jsonPath = @"D:\kruk\k-micro\DesigningAPIs\ProductsApi\data.json";
+            using (StreamReader file = File.OpenText(jsonPath))
+            {
+                List<Product> products = new List<Product>();
+                string json = file.ReadToEnd();
+                try
+                {
+                    products = JsonConvert.DeserializeObject<List<Product>>(json);
 
-        //        JsonSerializer serializer = new JsonSerializer();
-        //        serializer.ContractResolver = new DefaultContractResolver()
-        //        {
-        //            NamingStrategy = new SnakeCaseNamingStrategy()
-        //        };
-        //        var speakers = (List<Speaker>)serializer.Deserialize(file, typeof(List<Speaker>));
-        //        return speakers;
-        //    }
+                }
+                catch (JsonSerializationException ex)
+                {
+                    Console.WriteLine($"Deserialization error: {ex.Message}");
+                    throw;
+                }
+                return products;
+            }
         }
-    
+
+        private static List<Category> LoadCategories()
+        {
+            var jsonPath = @"D:\kruk\k-micro\DesigningAPIs\ProductsApi\category.json";
+            using (StreamReader file = File.OpenText(jsonPath))
+            {
+                List<Category> categories = new List<Category>();
+                string json = file.ReadToEnd();
+                try
+                {
+                    categories = JsonConvert.DeserializeObject<List<Category>>(json);
+
+                }
+                catch (JsonSerializationException ex)
+                {
+                    Console.WriteLine($"Deserialization error: {ex.Message}");
+                    throw;
+                }
+                return categories;
+            }
+        }
+    }
 }
