@@ -1,0 +1,273 @@
+[
+  {
+    "Id": 1,
+    "Name": "Apple iPhone 14",
+    "Description": "Latest model of the Apple iPhone series with improved features.",
+    "Price": 999.99,
+    "Stock": 50
+  },
+  {
+    "Id": 2,
+    "Name": "Samsung Galaxy S21",
+    "Description": "High-end smartphone from Samsung with excellent performance.",
+    "Price": 799.99,
+    "Stock": 75
+  },
+  {
+    "Id": 3,
+    "Name": "Sony WH-1000XM4",
+    "Description": "Noise-cancelling over-ear headphones with superior sound quality.",
+    "Price": 349.99,
+    "Stock": 200
+  },
+  {
+    "Id": 4,
+    "Name": "Dell XPS 13",
+    "Description": "Compact and powerful laptop with a 13-inch display.",
+    "Price": 1199.99,
+    "Stock": 30
+  },
+  {
+    "Id": 5,
+    "Name": "Apple MacBook Air",
+    "Description": "Lightweight and efficient laptop with Apple's M1 chip.",
+    "Price": 999.99,
+    "Stock": 40
+  },
+  {
+    "Id": 6,
+    "Name": "Google Pixel 6",
+    "Description": "Google's flagship smartphone with an advanced camera.",
+    "Price": 699.99,
+    "Stock": 60
+  },
+  {
+    "Id": 7,
+    "Name": "Banana",
+    "Description": "A sweet and nutritious fruit, perfect for snacking.",
+    "Price": 0.50,
+    "Stock": 500
+  },
+  {
+    "Id": 8,
+    "Name": "Apple",
+    "Description": "Crisp and juicy, available in various varieties.",
+    "Price": 0.75,
+    "Stock": 300
+  },
+  {
+    "Id": 9,
+    "Name": "Orange",
+    "Description": "A citrus fruit rich in Vitamin C, great for juicing.",
+    "Price": 0.80,
+    "Stock": 250
+  },
+  {
+    "Id": 10,
+    "Name": "Strawberry",
+    "Description": "Sweet and tart berries, perfect for desserts and snacks.",
+    "Price": 3.99,
+    "Stock": 150
+  },
+  {
+    "Id": 11,
+    "Name": "Broccoli",
+    "Description": "A healthy green vegetable, rich in vitamins and minerals.",
+    "Price": 1.50,
+    "Stock": 100
+  },
+  {
+    "Id": 12,
+    "Name": "Carrot",
+    "Description": "A crunchy and sweet vegetable, great for salads and snacks.",
+    "Price": 0.30,
+    "Stock": 400
+  },
+  {
+    "Id": 13,
+    "Name": "Lettuce",
+    "Description": "A fresh and crisp leafy green, ideal for salads.",
+    "Price": 1.00,
+    "Stock": 200
+  },
+  {
+    "Id": 14,
+    "Name": "Tomato",
+    "Description": "Juicy and versatile, perfect for salads, sauces, and sandwiches.",
+    "Price": 1.20,
+    "Stock": 180
+  },
+  {
+    "Id": 15,
+    "Name": "Cucumber",
+    "Description": "Cool and refreshing, great for salads and snacks.",
+    "Price": 0.90,
+    "Stock": 250
+  },
+  {
+    "Id": 16,
+    "Name": "Potato",
+    "Description": "A versatile vegetable, perfect for baking, frying, and mashing.",
+    "Price": 0.60,
+    "Stock": 350
+  },
+  {
+    "Id": 17,
+    "Name": "Onion",
+    "Description": "A flavorful vegetable, essential for many dishes.",
+    "Price": 0.40,
+    "Stock": 300
+  },
+  {
+    "Id": 18,
+    "Name": "Garlic",
+    "Description": "A pungent and flavorful bulb, used in many cuisines.",
+    "Price": 1.00,
+    "Stock": 150
+  },
+  {
+    "Id": 19,
+    "Name": "Sony PlayStation 5",
+    "Description": "Next-generation gaming console with advanced graphics.",
+    "Price": 499.99,
+    "Stock": 20
+  },
+  {
+    "Id": 20,
+    "Name": "Xbox Series X",
+    "Description": "Powerful gaming console from Microsoft with 4K gaming.",
+    "Price": 499.99,
+    "Stock": 25
+  },
+  {
+    "Id": 21,
+    "Name": "Nintendo Switch",
+    "Description": "Hybrid gaming console for home and portable play.",
+    "Price": 299.99,
+    "Stock": 40
+  },
+  {
+    "Id": 22,
+    "Name": "HP Spectre x360",
+    "Description": "High-end 2-in-1 laptop with a sleek design and powerful performance.",
+    "Price": 1299.99,
+    "Stock": 15
+  },
+  {
+    "Id": 23,
+    "Name": "Asus ROG Zephyrus",
+    "Description": "Gaming laptop with high performance and a slim design.",
+    "Price": 1599.99,
+    "Stock": 20
+  },
+  {
+    "Id": 24,
+    "Name": "Mango",
+    "Description": "A sweet and tropical fruit, great for smoothies and desserts.",
+    "Price": 1.50,
+    "Stock": 200
+  },
+  {
+    "Id": 25,
+    "Name": "Blueberry",
+    "Description": "Small, sweet berries, perfect for baking and snacking.",
+    "Price": 4.99,
+    "Stock": 100
+  },
+  {
+    "Id": 26,
+    "Name": "Watermelon",
+    "Description": "A large, juicy fruit, perfect for summer.",
+    "Price": 5.00,
+    "Stock": 50
+  },
+  {
+    "Id": 27,
+    "Name": "Pineapple",
+    "Description": "A tropical fruit with a sweet and tangy flavor.",
+    "Price": 3.00,
+    "Stock": 70
+  },
+  {
+    "Id": 28,
+    "Name": "Kiwi",
+    "Description": "A small, tangy fruit with a fuzzy skin.",
+    "Price": 0.75,
+    "Stock": 150
+  },
+  {
+    "Id": 29,
+    "Name": "Grapes",
+    "Description": "Small, sweet, and juicy, available in various varieties.",
+    "Price": 2.99,
+    "Stock": 180
+  },
+  {
+    "Id": 30,
+    "Name": "Pear",
+    "Description": "A sweet and juicy fruit with a smooth skin.",
+    "Price": 1.00,
+    "Stock": 200
+  },
+  {
+    "Id": 31,
+    "Name": "Spinach",
+    "Description": "A nutritious leafy green, great for salads and cooking.",
+    "Price": 1.20,
+    "Stock": 180
+  },
+  {
+    "Id": 32,
+    "Name": "Zucchini",
+    "Description": "A versatile squash, great for grilling and baking.",
+    "Price": 1.00,
+    "Stock": 150
+  },
+  {
+    "Id": 33,
+    "Name": "Bell Pepper",
+    "Description": "Sweet and crunchy, available in various colors.",
+    "Price": 1.50,
+    "Stock": 120
+  },
+  {
+    "Id": 34,
+    "Name": "Eggplant",
+    "Description": "A versatile vegetable, great for grilling and baking.",
+    "Price": 1.80,
+    "Stock": 90
+  },
+  {
+    "Id": 35,
+    "Name": "Cabbage",
+    "Description": "A leafy green, great for salads and cooking.",
+    "Price": 1.00,
+    "Stock": 130
+  },
+  {
+    "Id": 36,
+    "Name": "Cauliflower",
+    "Description": "A nutritious vegetable, great for roasting and mashing.",
+    "Price": 2.00,
+    "Stock": 100
+  },
+  {
+    "Id": 37,
+    "Name": "Beetroot",
+    "Description": "A sweet and earthy root vegetable, great for salads and cooking.",
+    "Price": 1.20,
+    "Stock": 140
+  },
+  {
+    "Id": 38,
+    "Name": "Cherries",
+    "Description": "Sweet and tart berries, perfect for desserts and snacks.",
+    "Price": 5.99,
+    "Stock": 80
+  },
+  {
+    "Id": 39,
+    "Name": "Raspberry",
+    "Description": "Sweet and tart berries, perfect for desserts and snacks.",
+    "Price": 4.99
+
