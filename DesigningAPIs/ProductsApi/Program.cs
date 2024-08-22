@@ -18,7 +18,7 @@ namespace ProductsApi
             // Add services to the container.
             builder.Services.AddControllers();
 
-            builder.Services.AddControllers(options => 
+            builder.Services.AddControllers(options =>
             {
                 options.ReturnHttpNotAcceptable = true;
                 options.AllowEmptyInputInBodyModelBinding = true;
@@ -95,7 +95,7 @@ namespace ProductsApi
             //builder.Services.AddApiVersioning(
             //    options => options.ApiVersionReader = new QueryStringApiVersionReader("v"));
 
-         
+
 
             builder.Services.AddApiVersioning(o =>
             {
@@ -130,7 +130,7 @@ namespace ProductsApi
                 using (var serviceScope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope())
                 {
                     serviceScope.ServiceProvider.GetService<ProductContext>().Database.EnsureCreated();
-                    //serviceScope.ServiceProvider.GetService<ProductContext>().EnsureSeeded();
+                   // serviceScope.ServiceProvider.GetService<ProductContext>().EnsureSeeded();
                 }
             }
 
