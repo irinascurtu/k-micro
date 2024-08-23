@@ -14,7 +14,11 @@ using System.Text.Json;
 
 namespace ProductsApi.Controllers
 {
-    [Route("api/[controller]")]
+    // [Route("api/[controller]")]
+    [Route("api/products")]
+    // [Route("api/v{version:apiVersion}/products")]
+    [Asp.Versioning.ApiVersion("1")]
+    [Asp.Versioning.AdvertiseApiVersions("1")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
@@ -42,9 +46,10 @@ namespace ProductsApi.Controllers
 
 
         [HttpGet]
+        [Produces("application/vnd.example.v1+json")]
         public async Task<IActionResult> GetProducts(int? categoryId)
         {
-            var products = await _productService.GetProductsAsync(categoryId);
+            var products = await _productService.GetProductsAsync();
 
             var productsToReturn = mapper.Map<IEnumerable<ProductModel>>(products);
             // var trimmedProducts = mapper.Map<IEnumerable<ProductTrimmed>>(products);
