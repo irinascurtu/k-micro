@@ -4,12 +4,17 @@ using Asp.Versioning.ApiExplorer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.OpenApi.Models;
+using ProductsApi.Controllers;
 using ProductsApi.Data;
+using ProductsApi.Data.Entities;
 using ProductsApi.Data.Repositories;
 using ProductsApi.Infrastructure;
 using ProductsApi.Service;
+using System.Threading.RateLimiting;
 
 namespace ProductsApi
 {
@@ -54,7 +59,14 @@ namespace ProductsApi
 
             builder.Services.AddDistributedMemoryCache();
             builder.Services.AddResponseCaching();
-
+            builder.Services.AddRateLimiter(_ => _
+                .AddFixedWindowLimiter(policyName: "fixed", options =>
+                {
+                    options.PermitLimit = 4;
+                    options.Window = TimeSpan.FromSeconds(12);
+                    options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+                    options.QueueLimit = 1;
+                }));
             //builder.Services.AddApiVersioning(options =>
             //{
             //    options.ApiVersionReader = new Asp.Versioning.QueryStringApiVersionReader("v");
@@ -107,6 +119,7 @@ namespace ProductsApi
             var provider = builder.Services.BuildServiceProvider().GetRequiredService<IApiVersionDescriptionProvider>();
             builder.Services.AddSwaggerGen(c =>
             {
+
                 foreach (var description in provider.ApiVersionDescriptions)
                 {
                     c.SwaggerDoc(description.GroupName, new Microsoft.OpenApi.Models.OpenApiInfo()
@@ -148,9 +161,9 @@ namespace ProductsApi
 
             app.UseAuthorization();
             app.UseResponseCaching();
-
+          
             app.MapControllers();
-
+            app.UseRateLimiter();
             app.Run();
         }
     }

@@ -11,6 +11,8 @@ using ProductsApi.Data.Entities;
 using ProductsApi.Models;
 using ProductsApi.Service;
 using System.Text.Json;
+using Swashbuckle.AspNetCore.Annotations;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace ProductsApi.Controllers
 {
@@ -46,7 +48,11 @@ namespace ProductsApi.Controllers
 
 
         [HttpGet]
+       
+        [ProducesResponseType(typeof(IEnumerable<ProductModel>), 200, "application/vnd.example.v1+json")]
+        [ProducesResponseType(typeof(IEnumerable<ProductModel>), 400)]
         [Produces("application/vnd.example.v1+json")]
+        [EnableRateLimiting("fixed")]
         public async Task<IActionResult> GetProducts(int? categoryId)
         {
             var products = await _productService.GetProductsAsync();
@@ -145,6 +151,10 @@ namespace ProductsApi.Controllers
 
         // GET: api/Products/{id}
         [HttpGet("{id}")]
+        [ProducesResponseType(typeof(IDictionary<string, string>), 400)]
+        [ProducesResponseType(typeof(ProductModel), 200, "application/json")]
+
+
         public async Task<ActionResult<ProductModel>> GetProduct(int id)
         {
             var product = await _productService.GetProductAsync(id);

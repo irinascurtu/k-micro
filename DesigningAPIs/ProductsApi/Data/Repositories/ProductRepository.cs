@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProductsApi.Data.Entities;
+using ProductsApi.Data.Entities.Extensions;
 
 namespace ProductsApi.Data.Repositories
 {
@@ -55,6 +56,17 @@ namespace ProductsApi.Data.Repositories
         public async Task<IQueryable<Product>> GetProductsAsync(int? categoryId)
         {
             return  _context.Products.Where(p => p.CategoryId == categoryId);
+        }
+
+
+        public async Task<IEnumerable<ProductStock>> GetProductStocksAsync(List<int> productIds)
+        {
+            var stocks = await _context.Products.Where(p => productIds.Contains(p.Id)).Select(x => new ProductStock
+            {
+                Stock = x.Stock,
+                ProductId = x.Id
+            }).ToListAsync();
+            return stocks;
         }
     }
 }
