@@ -5,6 +5,7 @@ namespace ProductsApi.Data
 {
     public static class DataSeeder
     {
+        static string rootPath = @"D:\ndc\start\k-micro\DesigningAPIs\ProductsApi\";
         public static void SeedData(ProductContext _context)
         {
             if (!_context.Products.Any())
@@ -21,7 +22,7 @@ namespace ProductsApi.Data
 
         private static List<Product> LoadProducts()
         {
-            var jsonPath = @"D:\kruk\k-micro\DesigningAPIs\ProductsApi\data.json";
+            var jsonPath = @rootPath + "data.json";
             using (StreamReader file = File.OpenText(jsonPath))
             {
                 List<Product> products = new List<Product>();
@@ -42,7 +43,7 @@ namespace ProductsApi.Data
 
         private static List<Category> LoadCategories()
         {
-            var jsonPath = @"D:\kruk\k-micro\DesigningAPIs\ProductsApi\category.json";
+            var jsonPath = @rootPath + "category.json";
             using (StreamReader file = File.OpenText(jsonPath))
             {
                 List<Category> categories = new List<Category>();

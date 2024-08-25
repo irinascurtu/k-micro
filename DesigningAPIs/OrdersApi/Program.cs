@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using OrdersApi.Data;
 using OrdersApi.Data.Repositories;
+using OrdersApi.Service;
 using OrdersApi.Services;
 
 namespace OrdersApi
@@ -29,6 +30,10 @@ namespace OrdersApi
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
+                using (var serviceScope = app.Services.GetRequiredService<IServiceScopeFactory>().CreateScope())
+                {
+                    serviceScope.ServiceProvider.GetService<OrderContext>().Database.EnsureCreated();
+                }
             }
 
             app.UseHttpsRedirection();

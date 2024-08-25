@@ -18,6 +18,7 @@ namespace OrdersApi.Data.Domain
 
         [Description("AwaitingPayment")]
         AwaitingPayment,
+
         [Description("ReadyForShipping")]
         ReadyForShipping,
 

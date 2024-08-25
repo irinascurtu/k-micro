@@ -1,7 +1,8 @@
 ﻿using OrdersApi.Data.Domain;
 using OrdersApi.Data.Repositories;
+using OrdersApi.Services;
 
-namespace OrdersApi.Services
+namespace OrdersApi.Service
 {
     public class OrderService : IOrderService
     {
